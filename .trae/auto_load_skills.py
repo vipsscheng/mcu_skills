@@ -26,10 +26,14 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
+HAS_PLATFORM_DETECTOR = False
 try:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    if script_dir not in sys.path:
+        sys.path.insert(0, script_dir)
     import platform_detector
     HAS_PLATFORM_DETECTOR = True
-except ImportError:
+except Exception:
     HAS_PLATFORM_DETECTOR = False
 
 REQUIRED_FILES = {
