@@ -1,0 +1,120 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-02-23T23:09:28.082572",
+  "skills_directory": "E:\\Desktop\\znt\\.trae\\skills",
+  "skills_count": 14,
+  "skills": [
+    {
+      "name": "clean-code-review-1.0.0",
+      "slug": "clean-code-review",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\clean-code-review-1.0.0",
+      "owner": "kn77z49xfssappp65hpybb9gx180x56e",
+      "published_at": 1770729831880
+    },
+    {
+      "name": "desktop-control-1.0.0",
+      "slug": "desktop-control",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\desktop-control-1.0.0",
+      "owner": "kn7ag28ra4hhta8bx2k2j1kpv180kqbk",
+      "published_at": 1770255200863
+    },
+    {
+      "name": "essence-distiller-1.0.1",
+      "slug": "essence-distiller",
+      "version": "1.0.1",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\essence-distiller-1.0.1",
+      "owner": "kn709ajvpej12sahm1ay1262qs80ehps",
+      "published_at": 1770708162375
+    },
+    {
+      "name": "fast-browser-use-1.0.5",
+      "slug": "fast-browser-use",
+      "version": "1.0.5",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\fast-browser-use-1.0.5",
+      "owner": "kn7bfqgw6nar13rjxcdzytmfms808fwa",
+      "published_at": 1769939146011
+    },
+    {
+      "name": "free-ride-1.0.4",
+      "slug": "free-ride",
+      "version": "1.0.4",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\free-ride-1.0.4",
+      "owner": "kn7eepf540q01kxs5gzwnvsp5s80hhje",
+      "published_at": 1771429600089
+    },
+    {
+      "name": "frontend-design-1.0.0",
+      "slug": "frontend-design",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\frontend-design-1.0.0",
+      "owner": "kn70pywhg0fyz996kpa8xj89s57yhv26",
+      "published_at": 1767651960903
+    },
+    {
+      "name": "mcu-c99-assistant",
+      "slug": "mcu-c99-assistant",
+      "version": "1.0.3",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\mcu-c99-assistant",
+      "owner": "local",
+      "published_at": 1700000000000
+    },
+    {
+      "name": "memory-manager-1.0.0",
+      "slug": "memory-manager",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\memory-manager-1.0.0",
+      "owner": "kn726ga714vfwrkgym8ybg13jn808q7g",
+      "published_at": 1769842400221
+    },
+    {
+      "name": "nima-core-3.0.6",
+      "slug": "nima-core",
+      "version": "3.0.6",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\nima-core-3.0.6",
+      "owner": "kn7991jtpjnpyxmv6m4kw0vykh80mc8t",
+      "published_at": 1771855113725
+    },
+    {
+      "name": "pdf-0.1.0",
+      "slug": "pdf",
+      "version": "0.1.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\pdf-0.1.0",
+      "owner": "kn725kyxpr1g1e3rjqtkp26v0s809930",
+      "published_at": 1769847855729
+    },
+    {
+      "name": "self-improving-1.1.0",
+      "slug": "self-improving",
+      "version": "1.1.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-1.1.0",
+      "owner": "kn73vp5rarc3b14rc7wjcw8f8580t5d1",
+      "published_at": 1771530801802
+    },
+    {
+      "name": "self-improving-agent-1.0.11",
+      "slug": "self-improving-agent",
+      "version": "1.0.11",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-agent-1.0.11",
+      "owner": "kn70cjr952qdec1nx70zs6wefn7ynq2t",
+      "published_at": 1771777713337
+    },
+    {
+      "name": "skill-creator-0.1.0",
+      "slug": "skill-creator",
+      "version": "0.1.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\skill-creator-0.1.0",
+      "owner": "kn7ajm25k9s5t1ajwxp2yfjx818015pb",
+      "published_at": 1769522677376
+    },
+    {
+      "name": "superdesign-1.0.0",
+      "slug": "superdesign",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\superdesign-1.0.0",
+      "owner": "kn79bhw9e6awqnf5v5y0ybsncd7ynfvp",
+      "published_at": 1767719074735
+    }
+  ]
+}

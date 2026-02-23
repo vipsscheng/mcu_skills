@@ -1,0 +1,9 @@
+{
+  "ownerId": "kn77z49xfssappp65hpybb9gx180x56e",
+  "slug": "clean-code-review",
+  "version": "1.0.0",
+  "publishedAt": 1770729831880,
+  "keywords": [
+    "代码审查", "code review", "清洁代码", "clean code", "代码质量", "code quality", "命名规范", "naming conventions", "函数设计", "function design", "代码结构", "code structure", "反模式", "anti-patterns", "代码气味", "code smells", "重构", "refactoring", "单一职责", "single responsibility", "DRY", "KISS", "YAGNI", "童子军规则", "boy scout rule", "守卫条款", "guard clauses", "参数对象", "parameter objects", "返回类型一致性", "return type consistency", "代码风格", "code style", "编程规范", "coding standards", "代码可读性", "code readability", "可维护性", "maintainability", "测试性", "testability"
+  ]
+}

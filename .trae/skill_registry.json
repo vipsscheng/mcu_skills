@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-02-23T19:39:35.366468",
+  "skills_count": 8,
+  "skills": [
+    {
+      "name": "fast-browser-use-1.0.5",
+      "slug": "fast-browser-use",
+      "version": "1.0.5",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\fast-browser-use-1.0.5",
+      "owner": "kn7bfqgw6nar13rjxcdzytmfms808fwa",
+      "published_at": 1769939146011
+    },
+    {
+      "name": "free-ride-1.0.4",
+      "slug": "free-ride",
+      "version": "1.0.4",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\free-ride-1.0.4",
+      "owner": "kn7eepf540q01kxs5gzwnvsp5s80hhje",
+      "published_at": 1771429600089
+    },
+    {
+      "name": "frontend-design-1.0.0",
+      "slug": "frontend-design",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\frontend-design-1.0.0",
+      "owner": "kn70pywhg0fyz996kpa8xj89s57yhv26",
+      "published_at": 1767651960903
+    },
+    {
+      "name": "mcu-c99-assistant",
+      "slug": "mcu-c99-assistant",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\mcu-c99-assistant",
+      "owner": "local",
+      "published_at": 1700000000000
+    },
+    {
+      "name": "pdf-0.1.0",
+      "slug": "pdf",
+      "version": "0.1.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\pdf-0.1.0",
+      "owner": "kn725kyxpr1g1e3rjqtkp26v0s809930",
+      "published_at": 1769847855729
+    },
+    {
+      "name": "self-improving-agent-1.0.11",
+      "slug": "self-improving-agent",
+      "version": "1.0.11",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-agent-1.0.11",
+      "owner": "kn70cjr952qdec1nx70zs6wefn7ynq2t",
+      "published_at": 1771777713337
+    },
+    {
+      "name": "skill-creator-0.1.0",
+      "slug": "skill-creator",
+      "version": "0.1.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\skill-creator-0.1.0",
+      "owner": "kn7ajm25k9s5t1ajwxp2yfjx818015pb",
+      "published_at": 1769522677376
+    },
+    {
+      "name": "superdesign-1.0.0",
+      "slug": "superdesign",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\superdesign-1.0.0",
+      "owner": "kn79bhw9e6awqnf5v5y0ybsncd7ynfvp",
+      "published_at": 1767719074735
+    }
+  ]
+}
