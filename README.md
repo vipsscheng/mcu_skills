@@ -8,7 +8,7 @@
 
 ### 项目概述
 
-这是一个面向 Trae AI 的技能系统，提供了多种专业化技能，涵盖嵌入式开发、前端设计、PDF处理、浏览器自动化、代码审查、自我改进等多个领域。
+这是一个 AI 的技能系统，提供了多种专业化技能，涵盖嵌入式开发、前端设计、PDF处理、浏览器自动化、代码审查、自我改进等多个领域。
 
 ### 核心原则（重要）
 
@@ -100,6 +100,26 @@ python skills_check_env.py
 - 提到"PDF" → 触发 pdf
 - 提到"浏览器" → 触发 fast-browser-use
 - 提到"界面"、"OLED" → 触发 frontend-design
+
+### 推荐使用的 AI 模型
+
+为获得最佳的单片机编程效果，推荐使用以下模型：
+
+#### 🌟 首选模型（效果最好）
+
+| 模型 | 说明 | 推荐方式 |
+|------|------|----------|
+| **Gemini 最新版** | 单片机编程效果优秀 | **API 密钥调用** |
+| **Claude 最新版** | 单片机编程效果最佳 | **API 密钥调用** |
+
+#### ⚠️ 重要说明
+
+- **API 密钥调用 = 满血版**：只有通过 API 密钥调用的模型才能发挥完整能力
+- **非 API 调用 = 残血版**：免费版、学生教育版、Pro 网页版等（非 API 调用）效果较差
+- **国内调用注意事项**：
+  - Gemini 和 Claude 在国内调用需要稳定的科学上网
+  - 注意封号风险，建议使用稳定的网络环境
+- **国产模型**：可以尝试使用，使用过程中有任何问题可以提交反馈，我会抓紧修复
 
 ### 最终交付标准
 
@@ -207,6 +227,26 @@ Skills are automatically triggered based on user input:
 - Mention "PDF" → triggers pdf
 - Mention "browser" → triggers fast-browser-use
 - Mention "interface", "OLED" → triggers frontend-design
+
+### Recommended AI Models
+
+For best MCU programming results, the following models are recommended:
+
+#### 🌟 Preferred Models (Best Performance)
+
+| Model | Description | Recommended Usage |
+|-------|-------------|-------------------|
+| **Gemini Latest** | Excellent MCU programming performance | **API Key Call** |
+| **Claude Latest** | Best MCU programming performance | **API Key Call** |
+
+#### ⚠️ Important Notes
+
+- **API Key Call = Full Version**: Only models called via API key can unleash full capabilities
+- **Non-API Call = Crippled Version**: Free version, student/education version, Pro web version, etc. (non-API calls) have poor performance
+- **China Access Notes**:
+  - Gemini and Claude require stable VPN for access in China
+  - Be aware of account suspension risk, recommend stable network environment
+- **Domestic Models**: Can be tried, any issues encountered during use can be submitted for feedback, I will fix promptly
 
 ### Final Delivery Standards
 
