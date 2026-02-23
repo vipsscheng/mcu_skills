@@ -1,229 +1,276 @@
-# Trae AI 技能系统
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trae AI 技能系统 | Trae AI Skills System</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .lang-switch { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+        .lang-btn { padding: 10px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: all 0.3s; }
+        .lang-btn.active { background: #667eea; color: white; }
+        .lang-btn:not(.active) { background: #e0e0e0; color: #333; }
+        .lang-btn:hover { transform: scale(1.05); }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .section { margin-bottom: 30px; }
+        h2 { color: #333; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #555; margin: 20px 0 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #667eea; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: "Courier New", monospace; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        pre code { background: none; padding: 0; }
+        .zh, .en { display: none; }
+        .zh.active, .en.active { display: block; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 10px 0; }
+        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 10px 0; }
+        .success { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 15px; margin: 10px 0; }
+        ul, ol { margin-left: 30px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .footer { text-align: center; margin-top: 30px; color: #666; }
+        a { color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Trae AI 技能系统</h1>
+        <p>Trae AI Skills System</p>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
+        </div>
+    </div>
 
-[English](./README_en.md) | 中文
+    <div class="content">
+        <!-- Project Overview -->
+        <div class="section">
+            <h2>项目概述 | Project Overview</h2>
+            <div class="zh active">
+                <p>这是一个面向 Trae AI 的技能系统，提供了多种专业化技能，涵盖嵌入式开发、前端设计、PDF处理、浏览器自动化、代码审查、自我改进等多个领域。</p>
+            </div>
+            <div class="en">
+                <p>This is a skill system for Trae AI, providing various specialized skills covering embedded development, frontend design, PDF processing, browser automation, code review, self-improvement, and other fields.</p>
+            </div>
+        </div>
 
-## 项目概述
+        <!-- Core Principles -->
+        <div class="section">
+            <h2>核心原则 | Core Principles</h2>
+            <div class="zh active">
+                <div class="note"><strong>⚠️ 守门员机制：</strong>所有外部技能（浏览器、PDF等）获取的信息，必须经过<strong>清洗与重构</strong>，确保转化为符合 C99 标准、非阻塞架构的单片机代码后，才能交付给用户。</div>
+                <div class="note"><strong>⚠️ 资源适应性：</strong>无论调用何种技能，最终方案必须符合目标芯片的【资源定级】</div>
+                <ul>
+                    <li><strong>微资源型</strong>（STC89C51）：禁用动态内存，使用前后台架构</li>
+                    <li><strong>中资源型</strong>（GD32F103）：支持简单状态机</li>
+                    <li><strong>高资源型</strong>（GD32F407）：支持分层架构、RTOS</li>
+                </ul>
+                <div class="warning"><strong>⚠️ 纯非阻塞架构：</strong>严禁 delay_ms()，必须使用 SysTick 差值比对或定时器轮询。</div>
+            </div>
+            <div class="en">
+                <div class="note"><strong>⚠️ Gatekeeper Mechanism:</strong> All information obtained from external skills (browser, PDF, etc.) must undergo <strong>cleaning and restructuring</strong> to ensure it is converted into C99-compliant, non-blocking MCU code before delivery.</div>
+                <div class="note"><strong>⚠️ Resource Adaptability:</strong> Regardless of which skill is invoked, the final solution must conform to the target chip's Resource Classification:</div>
+                <ul>
+                    <li><strong>Micro Resource</strong> (STC89C51): Dynamic memory forbidden, use foreground/background architecture</li>
+                    <li><strong>Medium Resource</strong> (GD32F103): Supports simple state machines</li>
+                    <li><strong>High Resource</strong> (GD32F407): Supports layered architecture, RTOS</li>
+                </ul>
+                <div class="warning"><strong>⚠️ Pure Non-Blocking:</strong> Strictly prohibit delay_ms(), must use SysTick delta comparison or timer polling.</div>
+            </div>
+        </div>
 
-这是一个面向 Trae AI 的技能系统，提供了多种专业化技能，涵盖嵌入式开发、前端设计、PDF处理、浏览器自动化、代码审查、自我改进等多个领域。
+        <!-- Skills List -->
+        <div class="section">
+            <h2>技能列表 | Skills List</h2>
+            <div class="zh active">
+                <h3>核心技能 | Core Skills</h3>
+                <table>
+                    <tr><th>技能名称</th><th>版本</th><th>描述</th><th>状态</th></tr>
+                    <tr><td>mcu-c99-assistant</td><td>1.0.3</td><td>单片机C99标准编程专家</td><td>✅</td></tr>
+                    <tr><td>self-improving-unified</td><td>1.0.0</td><td>自我改进与学习技能</td><td>✅</td></tr>
+                    <tr><td>nima-core</td><td>3.0.6</td><td>NIMA认知架构</td><td>✅</td></tr>
+                </table>
+                <h3>辅助技能 | Auxiliary Skills</h3>
+                <table>
+                    <tr><th>技能名称</th><th>版本</th><th>描述</th><th>状态</th></tr>
+                    <tr><td>pdf</td><td>0.1.0</td><td>PDF文档处理</td><td>✅</td></tr>
+                    <tr><td>fast-browser-use</td><td>1.0.5</td><td>浏览器自动化</td><td>✅</td></tr>
+                    <tr><td>frontend-design</td><td>1.0.0</td><td>嵌入式GUI设计</td><td>✅</td></tr>
+                    <tr><td>clean-code-review</td><td>1.0.0</td><td>代码审查</td><td>✅</td></tr>
+                    <tr><td>memory-manager</td><td>1.0.0</td><td>内存管理</td><td>✅</td></tr>
+                    <tr><td>desktop-control</td><td>1.0.0</td><td>桌面控制</td><td>✅</td></tr>
+                    <tr><td>skill-creator</td><td>0.1.0</td><td>技能创建</td><td>✅</td></tr>
+                    <tr><td>essence-distiller</td><td>1.0.1</td><td>内容提炼</td><td>✅</td></tr>
+                    <tr><td>free-ride</td><td>1.0.4</td><td>Free Ride</td><td>✅</td></tr>
+                    <tr><td>superdesign</td><td>1.0.0</td><td>超级设计</td><td>✅</td></tr>
+                </table>
+            </div>
+            <div class="en">
+                <h3>Core Skills</h3>
+                <table>
+                    <tr><th>Skill Name</th><th>Version</th><th>Description</th><th>Status</th></tr>
+                    <tr><td>mcu-c99-assistant</td><td>1.0.3</td><td>MCU C99 Programming Expert</td><td>✅</td></tr>
+                    <tr><td>self-improving-unified</td><td>1.0.0</td><td>Self-Improvement & Learning</td><td>✅</td></tr>
+                    <tr><td>nima-core</td><td>3.0.6</td><td>NIMA Cognitive Architecture</td><td>✅</td></tr>
+                </table>
+                <h3>Auxiliary Skills</h3>
+                <table>
+                    <tr><th>Skill Name</th><th>Version</th><th>Description</th><th>Status</th></tr>
+                    <tr><td>pdf</td><td>0.1.0</td><td>PDF Processing</td><td>✅</td></tr>
+                    <tr><td>fast-browser-use</td><td>1.0.5</td><td>Browser Automation</td><td>✅</td></tr>
+                    <tr><td>frontend-design</td><td>1.0.0</td><td>Embedded GUI Design</td><td>✅</td></tr>
+                    <tr><td>clean-code-review</td><td>1.0.0</td><td>Code Review</td><td>✅</td></tr>
+                    <tr><td>memory-manager</td><td>1.0.0</td><td>Memory Management</td><td>✅</td></tr>
+                    <tr><td>desktop-control</td><td>1.0.0</td><td>Desktop Control</td><td>✅</td></tr>
+                    <tr><td>skill-creator</td><td>0.1.0</td><td>Skill Creation</td><td>✅</td></tr>
+                    <tr><td>essence-distiller</td><td>1.0.1</td><td>Content Distillation</td><td>✅</td></tr>
+                    <tr><td>free-ride</td><td>1.0.4</td><td>Free Ride</td><td>✅</td></tr>
+                    <tr><td>superdesign</td><td>1.0.0</td><td>Super Design</td><td>✅</td></tr>
+                </table>
+            </div>
+        </div>
 
----
+        <!-- Supported Platforms -->
+        <div class="section">
+            <h2>支持的平台 | Supported Platforms</h2>
+            <div class="zh active">
+                <h3>国产平台（25+家）</h3>
+                <table>
+                    <tr><th>架构</th><th>品牌</th><th>系列</th><th>代表型号</th></tr>
+                    <tr><td>8051</td><td>STC</td><td>STC89/12/15/8A</td><td>STC89C52RC, STC12C5A60S2</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>兆易创新</td><td>GD32F103</td><td>GD32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>兆易创新</td><td>GD32F4</td><td>GD32F407VGT6</td></tr>
+                    <tr><td>ARM Cortex-M0+</td><td>华大半导体</td><td>HC32F003</td><td>HC32F003C4U6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>华大半导体</td><td>HC32F460</td><td>HC32F460KET6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>灵动微电子</td><td>MM32F103</td><td>MM32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>国民技术</td><td>N32</td><td>N32G430C8T7</td></tr>
+                    <tr><td>RISC-V</td><td>乐鑫</td><td>ESP32-C</td><td>ESP32-C3, ESP32-C6</td></tr>
+                </table>
+                <h3>进口平台（15+家）</h3>
+                <table>
+                    <tr><th>架构</th><th>品牌</th><th>系列</th><th>代表型号</th></tr>
+                    <tr><td>ARM Cortex-M3</td><td>ST</td><td>STM32F1</td><td>STM32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>ST</td><td>STM32F4</td><td>STM32F407VGT6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>NXP</td><td>LPC17</td><td>LPC1768FBD100</td></tr>
+                    <tr><td>AVR</td><td>Microchip</td><td>ATmega</td><td>ATmega328P</td></tr>
+                    <tr><td>PIC</td><td>Microchip</td><td>PIC32</td><td>PIC32MX470F512H</td></tr>
+                    <tr><td>MSP430</td><td>TI</td><td>MSP430G</td><td>MSP430G2553</td></tr>
+                    <tr><td>RISC-V</td><td>Raspberry Pi</td><td>RP2040</td><td>RP2040</td></tr>
+                </table>
+            </div>
+            <div class="en">
+                <h3>Domestic Platforms (25+ Brands)</h3>
+                <table>
+                    <tr><th>Architecture</th><th>Brand</th><th>Series</th><th>Representative Models</th></tr>
+                    <tr><td>8051</td><td>STC</td><td>STC89/12/15/8A</td><td>STC89C52RC, STC12C5A60S2</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>GigaDevice</td><td>GD32F103</td><td>GD32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>GigaDevice</td><td>GD32F4</td><td>GD32F407VGT6</td></tr>
+                    <tr><td>ARM Cortex-M0+</td><td>HDSC</td><td>HC32F003</td><td>HC32F003C4U6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>HDSC</td><td>HC32F460</td><td>HC32F460KET6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>MindMotion</td><td>MM32F103</td><td>MM32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>Nationstech</td><td>N32</td><td>N32G430C8T7</td></tr>
+                    <tr><td>RISC-V</td><td>Espressif</td><td>ESP32-C</td><td>ESP32-C3, ESP32-C6</td></tr>
+                </table>
+                <h3>Imported Platforms (15+ Brands)</h3>
+                <table>
+                    <tr><th>Architecture</th><th>Brand</th><th>Series</th><th>Representative Models</th></tr>
+                    <tr><td>ARM Cortex-M3</td><td>ST</td><td>STM32F1</td><td>STM32F103C8T6</td></tr>
+                    <tr><td>ARM Cortex-M4</td><td>ST</td><td>STM32F4</td><td>STM32F407VGT6</td></tr>
+                    <tr><td>ARM Cortex-M3</td><td>NXP</td><td>LPC17</td><td>LPC1768FBD100</td></tr>
+                    <tr><td>AVR</td><td>Microchip</td><td>ATmega</td><td>ATmega328P</td></tr>
+                    <tr><td>PIC</td><td>Microchip</td><td>PIC32</td><td>PIC32MX470F512H</td></tr>
+                    <tr><td>MSP430</td><td>TI</td><td>MSP430G</td><td>MSP430G2553</td></tr>
+                    <tr><td>RISC-V</td><td>Raspberry Pi</td><td>RP2040</td><td>RP2040</td></tr>
+                </table>
+            </div>
+        </div>
 
-## 核心原则（重要）
+        <!-- Quick Start -->
+        <div class="section">
+            <h2>快速开始 | Quick Start</h2>
+            <div class="zh active">
+                <h3>环境要求</h3>
+                <ul>
+                    <li>Python 3.6+</li>
+                    <li>Node.js（部分技能需要）</li>
+                    <li>Rust（fast-browser-use需要）</li>
+                </ul>
+                <h3>安装依赖</h3>
+                <pre><code>python skills_check_env.py</code></pre>
+                <h3>使用技能</h3>
+                <p>技能会根据用户输入自动触发。例如：</p>
+                <ul>
+                    <li>提到"单片机"、"MCU" → 触发 mcu-c99-assistant</li>
+                    <li>提到"PDF" → 触发 pdf</li>
+                    <li>提到"浏览器" → 触发 fast-browser-use</li>
+                    <li>提到"界面"、"OLED" → 触发 frontend-design</li>
+                </ul>
+            </div>
+            <div class="en">
+                <h3>Environment Requirements</h3>
+                <ul>
+                    <li>Python 3.6+</li>
+                    <li>Node.js (required by some skills)</li>
+                    <li>Rust (required by fast-browser-use)</li>
+                </ul>
+                <h3>Install Dependencies</h3>
+                <pre><code>python skills_check_env.py</code></pre>
+                <h3>Using Skills</h3>
+                <p>Skills are automatically triggered based on user input:</p>
+                <ul>
+                    <li>Mention "MCU" → triggers mcu-c99-assistant</li>
+                    <li>Mention "PDF" → triggers pdf</li>
+                    <li>Mention "browser" → triggers fast-browser-use</li>
+                    <li>Mention "interface", "OLED" → triggers frontend-design</li>
+                </ul>
+            </div>
+        </div>
 
-本技能系统的核心原则是**守门员机制**和**资源适应性**：
+        <!-- Final Delivery Standards -->
+        <div class="section">
+            <h2>最终交付标准 | Final Delivery Standards</h2>
+            <div class="zh active">
+                <div class="success">✅ 可编译：符合 ANSI C / C99 标准</div>
+                <div class="success">✅ 非阻塞：没有死循环延时</div>
+                <div class="success">✅ 资源匹配：不会让 2KB RAM 芯片跑 10KB 代码</div>
+                <div class="success">✅ 无幻觉：显式输出的文本块</div>
+                <div class="success">✅ 守门员验证：外部信息经过清洗重构</div>
+            </div>
+            <div class="en">
+                <div class="success">✅ Compilable: ANSI C / C99 compliant</div>
+                <div class="success">✅ Non-blocking: No dead-loop delays</div>
+                <div class="success">✅ Resource matching: Don't run 10KB code on 2KB RAM chip</div>
+                <div class="success">✅ No hallucination: Explicitly output text blocks</div>
+                <div class="success">✅ Gatekeeper verification: External info cleaned and restructured</div>
+            </div>
+        </div>
 
-### 1. 守门员机制 ⚠️
-所有外部技能（浏览器、PDF等）获取的信息，必须经过**清洗与重构**，确保转化为符合 C99 标准、非阻塞架构的单片机代码后，才能交付给用户。
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Trae AI Skills System | MIT License</p>
+            <p>Powered by Trae AI</p>
+        </div>
+    </div>
 
-### 2. 资源适应性 ⚠️
-无论调用何种技能，最终方案必须符合目标芯片的【资源定级】：
-- **微资源型**（STC89C51）：禁用动态内存，使用前后台架构
-- **中资源型**（GD32F103）：支持简单状态机
-- **高资源型**（GD32F407）：支持分层架构、RTOS
-
-### 3. 纯非阻塞架构
-严禁 `delay_ms()`，必须使用 SysTick 差值比对或定时器轮询。
-
----
-
-## 技能列表
-
-### 核心技能
-
-| 技能名称 | 版本 | 描述 | 状态 |
-|----------|------|------|------|
-| **mcu-c99-assistant** | 1.0.3 | 单片机C99标准编程专家 | ✅ |
-| **self-improving-unified** | 1.0.0 | 自我改进与学习技能 | ✅ |
-| **nima-core** | 3.0.6 | NIMA认知架构 | ✅ |
-
-### 辅助技能
-
-| 技能名称 | 版本 | 描述 | 状态 |
-|----------|------|------|------|
-| **pdf** | 0.1.0 | PDF文档处理 | ✅ |
-| **fast-browser-use** | 1.0.5 | 浏览器自动化 | ✅ |
-| **frontend-design** | 1.0.0 | 嵌入式GUI设计 | ✅ |
-| **clean-code-review** | 1.0.0 | 代码审查 | ✅ |
-| **memory-manager** | 1.0.0 | 内存管理 | ✅ |
-| **desktop-control** | 1.0.0 | 桌面控制 | ✅ |
-| **skill-creator** | 0.1.0 | 技能创建 | ✅ |
-| **essence-distiller** | 1.0.1 | 内容提炼 | ✅ |
-| **free-ride** | 1.0.4 | Free Ride | ✅ |
-| **superdesign** | 1.0.0 | 超级设计 | ✅ |
-
----
-
-## mcu-c99-assistant - 单片机编程助手
-
-**核心定位：单片机领域的总架构师与技术中枢**
-
-### 主要功能
-
-1. **项目搭建**：自动创建完整的项目结构
-2. **代码编写**：符合C99标准、纯非阻塞架构
-3. **调试支持**：基于"软硬协同立体排障思维"
-4. **性能优化**：针对单片机资源进行定级
-5. **技术咨询**：解答C99标准相关问题
-
-### 支持的平台
-
-#### 国产平台（25+家）
-
-| 架构 | 品牌 | 系列 | 代表型号 |
-|------|------|------|----------|
-| 8051 | STC | STC89/12/15/8A | STC89C52RC、STC12C5A60S2、STC8A8K64S4A12 |
-| ARM Cortex-M3 | 兆易创新 | GD32F103 | GD32F103C8T6、GD32F103RCT6 |
-| ARM Cortex-M4 | 兆易创新 | GD32F4 | GD32F407VGT6、GD32F450RGT6 |
-| ARM Cortex-M0+ | 华大半导体 | HC32F003 | HC32F003C4U6、HC32F003C6TA |
-| ARM Cortex-M4 | 华大半导体 | HC32F460 | HC32F460KET6、HC32F460JET6 |
-| ARM Cortex-M3 | 灵动微电子 | MM32F103 | MM32F103C8T6、MM32F103RCT6 |
-| ARM Cortex-M0+ | 中微半导体 | CMS32F | CMS32F031C6T6、CMS32F051C8T6 |
-| ARM Cortex-M3 | 士兰微 | SL32F | SL32F103C8T6、SL32F103RCT6 |
-| ARM Cortex-M3 | 比亚迪半导体 | BY32F | BY32F103C8T6、BY32F103RCT6 |
-| ARM Cortex-M3 | 华润微 | CR32F | CR32F103C8T6、CR32F103RCT6 |
-| ARM Cortex-M3 | 国民技术 | N32 | N32G430C8T7、N32G431C8T7 |
-| 8051 | 新唐科技 | N76E003 | N76E003、N76E885 |
-| ARM Cortex-M0 | 上海贝岭 | BL702 | BL702、BL704 |
-| 8051 | 南方科技 | STC | STC89C51、STC12C5A60S2 |
-| MIPS | 北京君正 | X1000 | X1000、X1000E |
-| RISC-V | 乐鑫 | ESP32-C | ESP32-C3、ESP32-C6 |
-| RISC-V | 长江存储 | Xtacking | 存储控制器系列 |
-| RISC-V | 合肥长鑫 | DDR | 内存控制器系列 |
-
-#### 进口平台（15+家）
-
-| 架构 | 品牌 | 系列 | 代表型号 |
-|------|------|------|----------|
-| ARM Cortex-M3 | ST | STM32F1 | STM32F103C8T6、STM32F103RCT6 |
-| ARM Cortex-M4 | ST | STM32F4 | STM32F407VGT6、STM32F429IGT6 |
-| ARM Cortex-M7 | ST | STM32F7 | STM32F767ZI、STM32F746ZG |
-| ARM Cortex-M4 | ST | STM32L4 | STM32L476RG、STM32L496AG |
-| ARM Cortex-M0+ | NXP | LPC8 | LPC812M101JDH20 |
-| ARM Cortex-M3 | NXP | LPC17 | LPC1768FBD100、LPC1788FBD208 |
-| ARM Cortex-M4 | NXP | K64 | MK64FN1M0VLQ12 |
-| AVR | Microchip | ATmega | ATmega328P、ATmega2560 |
-| PIC | Microchip | PIC16 | PIC16F877A、PIC16F18855 |
-| PIC | Microchip | PIC32 | PIC32MX470F512H |
-| MSP430 | TI | MSP430G | MSP430G2553、MSP430F5529 |
-| C2000 | TI | TMS320F28 | TMS320F28035、TMS320F28335 |
-| ARM Cortex-M4 | Infineon | XMC4000 | XMC4500、XMC4700 |
-| ARM Cortex-M3 | Renesas | RX600 | RX63N、RX631 |
-| RISC-V | Raspberry Pi | RP2040 | RP2040 |
-
-### 技能调用策略
-
-本技能会自动调用其他辅助技能，**并对结果负责（守门员机制）**：
-
-| 辅助技能 | 用途 | 过滤规则 |
-|----------|------|----------|
-| PDF技能 | 查看芯片手册 | 提取寄存器地址→转化为宏定义 |
-| 浏览器技能 | 搜索技术资料 | Arduino/C++→重写为C99 |
-| GUI技能 | 嵌入式界面设计 | LVGL/OLED/串口屏，非Web前端 |
-| 自我改进 | 记录学习经验 | 硬件经验库 |
-
-### 最终交付标准
-
-无论调用了多少个外部技能，最终交付必须满足：
-1. ✅ 可编译：符合 ANSI C / C99 标准
-2. ✅ 非阻塞：没有死循环延时
-3. ✅ 资源匹配：不会让 2KB RAM 芯片跑 10KB 代码
-4. ✅ 无幻觉：显式输出的文本块
-5. ✅ 守门员验证：外部信息经过清洗重构
-
----
-
-## 项目结构
-
-```
-skills/
-├── mcu-c99-assistant/           # 单片机编程助手（主技能）
-│   ├── docs/                    # 文档目录（30+篇）
-│   ├── SKILL.md                 # 技能定义
-│   └── _meta.json              # 元数据
-│
-├── self-improving-unified/       # 自我改进技能
-├── nima-core-3.0.6/             # NIMA认知架构
-├── pdf-0.1.0/                   # PDF处理
-├── fast-browser-use-1.0.5/       # 浏览器自动化
-├── frontend-design-1.0.0/       # 嵌入式GUI设计
-├── clean-code-review-1.0.0/      # 代码审查
-├── memory-manager-1.0.0/         # 内存管理
-├── desktop-control-1.0.0/        # 桌面控制
-├── skill-creator-0.1.0/         # 技能创建
-├── essence-distiller-1.0.1/      # 内容提炼
-├── free-ride-1.0.4/             # Free Ride
-└── superdesign-1.0.0/           # 超级设计
-```
-
----
-
-## 快速开始
-
-### 环境要求
-
-- Python 3.6+
-- Node.js（部分技能需要）
-- Rust（fast-browser-use需要）
-
-### 安装依赖
-
-```bash
-python skills_check_env.py
-```
-
-### 使用技能
-
-技能会根据用户输入自动触发。例如：
-
-- 提到"单片机"、"MCU"、"GPIO"等 → 触发 mcu-c99-assistant
-- 提到"PDF"、"处理PDF" → 触发 pdf
-- 提到"浏览器"、"网页" → 触发 fast-browser-use
-- 提到"界面"、"OLED"、"LVGL" → 触发 frontend-design（嵌入式GUI）
-- 提到"错误"、"bug"、"修复" → 触发 self-improving-unified
-
----
-
-## 工具脚本
-
-### skills_check_env.py
-技能环境检测与安装脚本。
-
-```bash
-python skills_check_env.py
-```
-
-### install_skills.py
-统一技能安装脚本。
-
-```bash
-python install_skills.py
-```
-
----
-
-## 文档
-
-- [单片机型号收集](./skills/mcu-c99-assistant/docs/comprehensive_mcu_models.md)
-- [芯片手册摘要](./skills/mcu-c99-assistant/docs/chip_datasheet_summary.md)
-- [芯片官方手册链接](./skills/mcu-c99-assistant/docs/chip_datasheets.md)
-
----
-
-## 更新日志
-
-### 2026-02-24
-- mcu-c99-assistant 强化核心原则（守门员机制、资源适应性）
-- 前端设计技能重新定位为"嵌入式GUI设计"
-- 添加自我改进统一技能 self-improving-unified
-- 添加 skills_check_env.py 环境检测脚本
-- 完善所有技能的 metadata 配置
-
----
-
-## 许可证
-
-本项目基于 MIT 许可证开源。
-
----
-
-*本项目由 Trae AI 驱动*
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.zh, .en').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            
+            if (lang === 'zh') {
+                document.querySelectorAll('.zh').forEach(el => el.classList.add('active'));
+                document.querySelector('.lang-btn:nth-child(1)').classList.add('active');
+                document.documentElement.lang = 'zh-CN';
+            } else {
+                document.querySelectorAll('.en').forEach(el => el.classList.add('active'));
+                document.querySelector('.lang-btn:nth-child(2)').classList.add('active');
+                document.documentElement.lang = 'en';
+            }
+        }
+    </script>
+</body>
+</html>
