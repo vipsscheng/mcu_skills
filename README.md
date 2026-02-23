@@ -29,6 +29,20 @@
 - 资源适应性检查
 - 无幻觉验证
 
+#### 📐 生成代码架构的优化
+- **前后台系统**（Super Loop）：适用于微资源型芯片，主循环 + 中断
+- **状态机架构**：适用于中资源型芯片，模块化设计
+- **分层架构**：适用于高资源型芯片，驱动层 + 业务层 + 应用层
+- **RTOS 集成**：适用于高资源型芯片，任务调度 + 信号量 + 队列
+
+#### 📝 注释的约束与规则
+- **功能注释**：每个函数必须有清晰的功能说明
+- **参数注释**：输入输出参数的用途与取值范围
+- **返回值注释**：返回值的含义与错误码说明
+- **时序注释**：关键时序的 nop 计数或定时器配置
+- **资源注释**：RAM/ROM 使用情况说明
+- **中文优先**：注释使用严谨的中文，代码附带详尽说明
+
 ### 技能列表
 
 #### 核心技能
@@ -159,6 +173,20 @@ This system imposes strict constraints and standards on model-generated code to 
 - C99 standard compliance
 - Resource adaptability checks
 - No-hallucination verification
+
+#### 📐 Generated Code Architecture Optimization
+- **Foreground/Background System** (Super Loop): For micro-resource chips, main loop + interrupt
+- **State Machine Architecture**: For medium-resource chips, modular design
+- **Layered Architecture**: For high-resource chips, driver layer + business layer + application layer
+- **RTOS Integration**: For high-resource chips, task scheduling + semaphore + queue
+
+#### 📝 Comment Constraints and Rules
+- **Function Comment**: Each function must have clear functional description
+- **Parameter Comment**: Purpose and value range of input/output parameters
+- **Return Value Comment**: Meaning of return value and error code description
+- **Timing Comment**: nop count or timer configuration for critical timing
+- **Resource Comment**: RAM/ROM usage description
+- **Chinese Priority**: Comments use rigorous Chinese, code with detailed explanations
 
 ### Skills List
 
