@@ -1,4 +1,4 @@
-# Trae AI 技能系统 | Trae AI Skills System
+# Trae人工智能技能系统 | Trae AI Skills System
 
 [English](#-english) | [中文](#-中文)
 
