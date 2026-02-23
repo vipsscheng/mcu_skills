@@ -12,36 +12,33 @@
 
 ### 核心原则（重要）
 
-#### ⚠️ 守门员机制
-所有外部技能（浏览器、PDF等）获取的信息，必须经过**清洗与重构**，确保转化为符合 C99 标准、非阻塞架构的单片机代码后，才能交付给用户。
+#### ⚠️ 门卫制度
+所有外部技能（浏览器、PDF等）获取的信息，必须经过清理和重构，确保转化为符合C99标准、非阻塞架构的单片机代码后，才能交付给用户。
 
-#### ⚠️ 资源适应性
-无论调用何种技能，最终方案必须符合目标芯片的【资源定级】：
+#### ⚠️ 资源储备
+双方征集技能，最终方案必须满足目标芯片的【资源定级】：
 
-- **微资源型**（STC89C51）：禁用动态内存，使用前后台架构
+- **微资源型**（STC89C51）：禁用动态内存，使用前置后台架构
 - **中资源型**（GD32F103）：支持简单状态机
 - **高资源型**（GD32F407）：支持分层架构、RTOS
 
-#### ⚠️ 代码生成约束
-本系统对模型生成的代码进行严格的约束与规范，确保输出符合嵌入式开发标准：
-- 非阻塞架构要求
-- C99 标准合规
-- 资源适应性检查
+#### ⚠️ 代码生成约束与规范
+- 阻止非架构要求
+- C99标准合规
+- 资源状况检查
 - 无幻觉验证
 
 #### 📐 生成代码架构的优化
-- **前后台系统**（Super Loop）：适用于微资源型芯片，主循环 + 中断
-- **状态机架构**：适用于中资源型芯片，模块化设计
-- **分层架构**：适用于高资源型芯片，驱动层 + 业务层 + 应用层
-- **RTOS 集成**：适用于高资源型芯片，任务调度 + 信号量 + 队列
+- 状态机架构
+- 分层架构
+- RTOS集成
 
-#### 📝 注释的约束与规则
-- **功能注释**：每个函数必须有清晰的功能说明
-- **参数注释**：输入输出参数的用途与取值范围
-- **返回值注释**：返回值的含义与错误码说明
-- **时序注释**：关键时序的 nop 计数或定时器配置
-- **资源注释**：RAM/ROM 使用情况说明
-- **中文优先**：注释使用严谨的中文，代码附带详尽说明
+#### 📝 备注与规则
+- 功能注释
+- 参数注释
+- 返回值说明
+- 关键注释
+- 资源注释
 
 ### 技能列表
 
@@ -158,35 +155,32 @@ This is a skill system for Trae AI, providing various specialized skills coverin
 ### Core Principles (Important)
 
 #### ⚠️ Gatekeeper Mechanism
-All information obtained from external skills (browser, PDF, etc.) must undergo **cleaning and restructuring** to ensure it is converted into C99-compliant, non-blocking MCU code before delivery.
+All information obtained from external skills (browser, PDF, etc.) must undergo cleaning and restructuring to ensure it is converted into C99-compliant, non-blocking MCU code before delivery.
 
-#### ⚠️ Resource Adaptability
+#### ⚠️ Resource Reserve
 Regardless of which skill is invoked, the final solution must conform to the target chip's Resource Classification:
 
 - **Micro Resource** (STC89C51): Dynamic memory forbidden, use foreground/background architecture
 - **Medium Resource** (GD32F103): Supports simple state machines
 - **High Resource** (GD32F407): Supports layered architecture, RTOS
 
-#### ⚠️ Code Generation Constraints
-This system imposes strict constraints and standards on model-generated code to ensure compliance with embedded development standards:
+#### ⚠️ Code Generation Constraints and Standards
 - Non-blocking architecture requirements
 - C99 standard compliance
-- Resource adaptability checks
+- Resource status checks
 - No-hallucination verification
 
 #### 📐 Generated Code Architecture Optimization
-- **Foreground/Background System** (Super Loop): For micro-resource chips, main loop + interrupt
-- **State Machine Architecture**: For medium-resource chips, modular design
-- **Layered Architecture**: For high-resource chips, driver layer + business layer + application layer
-- **RTOS Integration**: For high-resource chips, task scheduling + semaphore + queue
+- State machine architecture
+- Layered architecture
+- RTOS integration
 
-#### 📝 Comment Constraints and Rules
-- **Function Comment**: Each function must have clear functional description
-- **Parameter Comment**: Purpose and value range of input/output parameters
-- **Return Value Comment**: Meaning of return value and error code description
-- **Timing Comment**: nop count or timer configuration for critical timing
-- **Resource Comment**: RAM/ROM usage description
-- **Chinese Priority**: Comments use rigorous Chinese, code with detailed explanations
+#### 📝 Notes and Rules
+- Function comment
+- Parameter comment
+- Return value description
+- Key comment
+- Resource comment
 
 ### Skills List
 
