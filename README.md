@@ -22,15 +22,12 @@
 - **中资源型**（GD32F103）：支持简单状态机
 - **高资源型**（GD32F407）：支持分层架构、RTOS
 
-#### ⚠️ 纯非阻塞架构
-- **严禁使用** `delay_ms()`、`delay_us()`
-- **必须使用** SysTick 差值比对或定时器轮询
-- 耗时任务（EEPROM写入、ADC采样）必须**切片化执行**
-
-#### ⚠️ C99 标准强制
-- 强制使用 `<stdint.h>` 类型定义
-- 隔离编译器扩展关键字（如 `__sfr`、`__code`）
-- 使用 `static inline` 替代宏定义（安全优先）
+#### ⚠️ 代码生成约束
+本系统对模型生成的代码进行严格的约束与规范，确保输出符合嵌入式开发标准：
+- 非阻塞架构要求
+- C99 标准合规
+- 资源适应性检查
+- 无幻觉验证
 
 ### 技能列表
 
@@ -156,15 +153,12 @@ Regardless of which skill is invoked, the final solution must conform to the tar
 - **Medium Resource** (GD32F103): Supports simple state machines
 - **High Resource** (GD32F407): Supports layered architecture, RTOS
 
-#### ⚠️ Pure Non-Blocking Architecture
-- **Strictly prohibit** `delay_ms()`, `delay_us()`
-- **Must use** SysTick delta comparison or timer polling
-- Time-consuming tasks (EEPROM write, ADC sampling) must be **sliced execution**
-
-#### ⚠️ C99 Standard Enforcement
-- Mandatory use of `<stdint.h>` type definitions
-- Isolate compiler extension keywords (like `__sfr`, `__code`)
-- Use `static inline` instead of macros (safety first)
+#### ⚠️ Code Generation Constraints
+This system imposes strict constraints and standards on model-generated code to ensure compliance with embedded development standards:
+- Non-blocking architecture requirements
+- C99 standard compliance
+- Resource adaptability checks
+- No-hallucination verification
 
 ### Skills List
 
