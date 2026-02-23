@@ -149,6 +149,7 @@ WINGET_PACKAGES = {
     "git": {"id": "Git.Git", "name": "Git"},
     "python3": {"id": "Python.Python.3.13", "name": "Python 3.13"},
     "node": {"id": "OpenJS.NodeJS.LTS", "name": "Node.js LTS"},
+    "psutil": {"id": "", "name": "psutil (Python包)", "pip_only": True},
 }
 
 def get_command_path(cmd):

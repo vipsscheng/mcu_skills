@@ -4,6 +4,7 @@
 支持自定义技能目录路径，可以扫描任意位置的技能
 支持从GitHub仓库远程拉取技能
 支持自动检查更新和静默模式
+支持AI编程工具平台自动检测（Trae、Cursor、Copilot、Claude等）
 用法: 
     python auto_load_skills.py                    # 默认扫描当前目录的 .trae/skills
     python auto_load_skills.py --path /path/to/skills  # 自定义技能目录
@@ -14,6 +15,7 @@
     python auto_load_skills.py --check-update          # 检查是否有更新
     python auto_load_skills.py --auto-update           # 自动检查并应用更新
     python auto_load_skills.py --silent                # 静默模式（无输出）
+    python auto_load_skills.py --detect-platform       # 检测当前AI编程工具平台
 """
 import os
 import sys
@@ -23,6 +25,12 @@ import shutil
 import subprocess
 from pathlib import Path
 from datetime import datetime
+
+try:
+    import platform_detector
+    HAS_PLATFORM_DETECTOR = True
+except ImportError:
+    HAS_PLATFORM_DETECTOR = False
 
 REQUIRED_FILES = {
     'SKILL.md': '技能说明文件',
@@ -226,13 +234,28 @@ def validate_skill(skill_name, skill_path):
         'name': skill_name,
         'path': skill_path,
         'meta': meta,
-        'files': found_files
+        'files': found_files,
+        'platform_templates': {}
     }
 
     for filename, description in OPTIONAL_FILES.items():
         file_path = os.path.join(skill_path, filename)
         if os.path.exists(file_path):
             skill_info[filename.rstrip('/')] = file_path
+
+    if HAS_PLATFORM_DETECTOR:
+        available_templates = platform_detector.get_available_templates(skill_path)
+        if available_templates:
+            skill_info['platform_templates']['available'] = available_templates
+            
+            current_platform = platform_detector.detect_platform()
+            if current_platform != 'unknown':
+                template_path = platform_detector.get_platform_template_path(skill_path, current_platform)
+                if template_path:
+                    skill_info['platform_templates']['active'] = template_path
+                    skill_info['platform_templates']['platform'] = current_platform
+                    print_silent(f"   🎯 检测到平台: {platform_detector.get_platform_info(current_platform)['name']}")
+                    print_silent(f"   📄 平台模板: {os.path.basename(template_path)}")
 
     print_silent(f"   ✅ 技能验证通过")
     return skill_info
@@ -341,8 +364,14 @@ def generate_registry(skills, skills_dir):
         'generated_at': datetime.now().isoformat(),
         'skills_directory': skills_dir,
         'skills_count': len(skills),
-        'skills': []
+        'skills': [],
+        'platform': {}
     }
+
+    if HAS_PLATFORM_DETECTOR:
+        current_platform = platform_detector.detect_platform()
+        registry['platform']['detected'] = current_platform
+        registry['platform']['info'] = platform_detector.get_platform_info(current_platform)
 
     for skill in skills:
         skill_entry = {
@@ -351,7 +380,8 @@ def generate_registry(skills, skills_dir):
             'version': skill['meta'].get('version', '1.0.0'),
             'path': skill['path'],
             'owner': skill['meta'].get('ownerId', 'unknown'),
-            'published_at': skill['meta'].get('publishedAt', 0)
+            'published_at': skill['meta'].get('publishedAt', 0),
+            'platform_templates': skill.get('platform_templates', {})
         }
 
         registry['skills'].append(skill_entry)
@@ -392,6 +422,15 @@ def print_skill_list(registry):
 
 def main():
     config = load_config()
+    
+    # 平台检测模式
+    if '--detect-platform' in sys.argv:
+        if HAS_PLATFORM_DETECTOR:
+            return platform_detector.main()
+        else:
+            print("错误: platform_detector 模块不可用")
+            return 1
+    
     print_silent("🚀 技能自动加载器 V4.0")
     print_silent(f"时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 

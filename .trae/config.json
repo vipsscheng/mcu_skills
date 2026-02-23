@@ -10,5 +10,17 @@
   "github": {
     "repo": "https://github.com/vipsscheng/mcu_skills.git",
     "branch": "main"
+  },
+  "platform": {
+    "auto_detect": true,
+    "forced_platform": null,
+    "available_platforms": [
+      "trae",
+      "cursor",
+      "copilot",
+      "claude",
+      "windsurf",
+      "continue"
+    ]
   }
 }
