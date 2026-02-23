@@ -5,7 +5,7 @@
     "check_interval_hours": 24,
     "silent_mode": false,
     "auto_apply_updates": false,
-    "last_check_timestamp": 1771876843.19254
+    "last_check_timestamp": 1771878213.400551
   },
   "github": {
     "repo": "https://github.com/vipsscheng/mcu_skills.git",
