@@ -32,13 +32,21 @@
 - 状态机架构
 - 分层架构
 - RTOS集成
+- 功能模块化
 
-#### 📝 备注与规则
+#### 📝 注释规则
 - 功能注释
 - 参数注释
 - 返回值说明
 - 关键注释
 - 资源注释
+
+### 最终交付标准
+- ✅ 可编译：符合 ANSI C / C99 标准
+- ✅ 符合注释：
+- ✅ 资源匹配：不会让 2KB RAM 芯片跑 10KB 代码
+- ✅ 无幻觉：显式输出的文本块
+- ✅ 守门员验证：外部信息经过翻新重构
 
 ### 技能列表
 
@@ -136,14 +144,6 @@ python skills_check_env.py
   - 注意封号风险，建议使用稳定的网络环境
 - **国产模型**：可以尝试使用，使用过程中有任何问题可以提交反馈，我会抓紧修复
 
-### 最终交付标准
-
-- ✅ 可编译：符合 ANSI C / C99 标准
-- ✅ 非阻塞：没有死循环延时
-- ✅ 资源匹配：不会让 2KB RAM 芯片跑 10KB 代码
-- ✅ 无幻觉：显式输出的文本块
-- ✅ 守门员验证：外部信息经过清洗重构
-
 ---
 
 ## 🇺🇸 English
@@ -174,13 +174,21 @@ Regardless of which skill is invoked, the final solution must conform to the tar
 - State machine architecture
 - Layered architecture
 - RTOS integration
+- Functional modularity
 
-#### 📝 Notes and Rules
+#### 📝 Comment Rules
 - Function comment
 - Parameter comment
 - Return value description
 - Key comment
 - Resource comment
+
+### Final Delivery Standards
+- ✅ Compilable: Compliant with ANSI C / C99 standard
+- ✅ Comment compliance:
+- ✅ Resource matching: Don't run 10KB code on 2KB RAM chip
+- ✅ No hallucination: Explicitly output text blocks
+- ✅ Gatekeeper verification: External info cleaned and restructured
 
 ### Skills List
 
@@ -277,14 +285,6 @@ For best MCU programming results, the following models are recommended:
   - Gemini and Claude require stable VPN for access in China
   - Be aware of account suspension risk, recommend stable network environment
 - **Domestic Models**: Can be tried, any issues encountered during use can be submitted for feedback, I will fix promptly
-
-### Final Delivery Standards
-
-- ✅ Compilable: ANSI C / C99 compliant
-- ✅ Non-blocking: No dead-loop delays
-- ✅ Resource matching: Don't run 10KB code on 2KB RAM chip
-- ✅ No hallucination: Explicitly output text blocks
-- ✅ Gatekeeper verification: External info cleaned and restructured
 
 ---
 
