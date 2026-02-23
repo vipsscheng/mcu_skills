@@ -23,7 +23,14 @@
 - **高资源型**（GD32F407）：支持分层架构、RTOS
 
 #### ⚠️ 纯非阻塞架构
-严禁 `delay_ms()`，必须使用 SysTick 差值比对或定时器轮询。
+- **严禁使用** `delay_ms()`、`delay_us()`
+- **必须使用** SysTick 差值比对或定时器轮询
+- 耗时任务（EEPROM写入、ADC采样）必须**切片化执行**
+
+#### ⚠️ C99 标准强制
+- 强制使用 `<stdint.h>` 类型定义
+- 隔离编译器扩展关键字（如 `__sfr`、`__code`）
+- 使用 `static inline` 替代宏定义（安全优先）
 
 ### 技能列表
 
@@ -150,7 +157,14 @@ Regardless of which skill is invoked, the final solution must conform to the tar
 - **High Resource** (GD32F407): Supports layered architecture, RTOS
 
 #### ⚠️ Pure Non-Blocking Architecture
-Strictly prohibit `delay_ms()`, must use SysTick delta comparison or timer polling.
+- **Strictly prohibit** `delay_ms()`, `delay_us()`
+- **Must use** SysTick delta comparison or timer polling
+- Time-consuming tasks (EEPROM write, ADC sampling) must be **sliced execution**
+
+#### ⚠️ C99 Standard Enforcement
+- Mandatory use of `<stdint.h>` type definitions
+- Isolate compiler extension keywords (like `__sfr`, `__code`)
+- Use `static inline` instead of macros (safety first)
 
 ### Skills List
 
