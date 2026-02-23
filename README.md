@@ -150,7 +150,7 @@ python skills_check_env.py
 
 ### Project Overview
 
-This is a skill system providing various specialized skills covering embedded development, frontend design, PDF processing, browser automation, code review, self-improvement, and other fields.
+This is a skill system for AI, providing various specialized skills covering embedded development, frontend design, PDF processing, browser automation, code review, self-improvement, and other fields.
 
 ### Core Principles (Important)
 
@@ -287,6 +287,8 @@ For best MCU programming results, the following models are recommended:
 - **Domestic Models**: Can be tried, any issues encountered during use can be submitted for feedback, I will fix promptly
 
 ---
+
+*Powered by AI*
 
 ## License
 
