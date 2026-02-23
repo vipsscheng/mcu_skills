@@ -1,8 +1,8 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-02-23T23:09:28.082572",
+  "generated_at": "2026-02-24T01:25:00.000000",
   "skills_directory": "E:\\Desktop\\znt\\.trae\\skills",
-  "skills_count": 14,
+  "skills_count": 13,
   "skills": [
     {
       "name": "clean-code-review-1.0.0",
@@ -85,20 +85,12 @@
       "published_at": 1769847855729
     },
     {
-      "name": "self-improving-1.1.0",
-      "slug": "self-improving",
-      "version": "1.1.0",
-      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-1.1.0",
-      "owner": "kn73vp5rarc3b14rc7wjcw8f8580t5d1",
-      "published_at": 1771530801802
-    },
-    {
-      "name": "self-improving-agent-1.0.11",
-      "slug": "self-improving-agent",
-      "version": "1.0.11",
-      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-agent-1.0.11",
-      "owner": "kn70cjr952qdec1nx70zs6wefn7ynq2t",
-      "published_at": 1771777713337
+      "name": "self-improving-unified-1.0.0",
+      "slug": "self-improving-unified",
+      "version": "1.0.0",
+      "path": "E:\\Desktop\\znt\\.trae\\skills\\self-improving-unified-1.0.0",
+      "owner": "local",
+      "published_at": 1771861900000
     },
     {
       "name": "skill-creator-0.1.0",
