@@ -18,9 +18,9 @@
 #### ⚠️ 资源储备
 双方征集技能，最终方案必须满足目标芯片的【资源定级】：
 
-- **微资源型**（STC89C51）：禁用动态内存，使用前置后台架构
+- **微资源型**（STC89C51）：禁止使用动态内存
 - **中资源型**（GD32F103）：支持简单状态机
-- **高资源型**（GD32F407）：支持分层架构、RTOS
+- **高资源型**（GD32F407）：支持分层架构和实时操作系统
 
 #### ⚠️ 代码生成约束与规范
 - 阻止非架构要求
@@ -160,9 +160,9 @@ All information obtained from external skills (browser, PDF, etc.) must undergo 
 #### ⚠️ Resource Reserve
 Regardless of which skill is invoked, the final solution must conform to the target chip's Resource Classification:
 
-- **Micro Resource** (STC89C51): Dynamic memory forbidden, use foreground/background architecture
+- **Micro Resource** (STC89C51): Dynamic memory forbidden
 - **Medium Resource** (GD32F103): Supports simple state machines
-- **High Resource** (GD32F407): Supports layered architecture, RTOS
+- **High Resource** (GD32F407): Supports layered architecture and real-time operating system
 
 #### ⚠️ Code Generation Constraints and Standards
 - Non-blocking architecture requirements
