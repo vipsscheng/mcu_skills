@@ -1,0 +1,14 @@
+{
+  "auto_update": {
+    "enabled": true,
+    "check_on_startup": true,
+    "check_interval_hours": 24,
+    "silent_mode": false,
+    "auto_apply_updates": false,
+    "last_check_timestamp": 1771876843.19254
+  },
+  "github": {
+    "repo": "https://github.com/vipsscheng/mcu_skills.git",
+    "branch": "main"
+  }
+}
