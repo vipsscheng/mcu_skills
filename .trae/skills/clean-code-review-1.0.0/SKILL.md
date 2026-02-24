@@ -213,6 +213,7 @@ Before changing any file, answer these questions to avoid cascading breakage:
 
 | Question | Why |
 |----------|-----|
+| **Did you backup the code?** | Copy original to .backup/ before any change for traceability |
 | **What imports this file?** | Dependents might break on interface changes |
 | **What does this file import?** | You might need to update the contract |
 | **What tests cover this?** | Tests might fail — update them alongside code |
@@ -220,9 +221,9 @@ Before changing any file, answer these questions to avoid cascading breakage:
 
 ```
 File to edit: UserService.ts
-├── Who imports this? → UserController.ts, AuthController.ts
-├── Do they need changes too? → Check function signatures
-└── What tests cover this? → UserService.test.ts
+- Who imports this? -> UserController.ts, AuthController.ts
+- Do they need changes too? -> Check function signatures
+- What tests cover this? -> UserService.test.ts
 ```
 
 > **Rule:** Edit the file + all dependent files in the SAME task. Never leave broken imports or missing updates.
@@ -245,14 +246,16 @@ Before marking any task complete, verify:
 
 ## NEVER Do
 
-1. **NEVER add comments that restate the code** — if the code needs a comment to explain *what* it does, rename things until it doesn't
-2. **NEVER create abstractions for fewer than 3 use cases** — premature abstraction is worse than duplication
-3. **NEVER leave commented-out code in the codebase** — delete it; version control exists for history
-4. **NEVER write functions longer than 20 lines** — extract sub-functions until each does one thing
-5. **NEVER nest deeper than 2 levels** — use guard clauses, early returns, or extract functions
-6. **NEVER use magic numbers or strings** — define named constants with clear semantics
-7. **NEVER edit a file without checking what depends on it** — broken imports and missing updates are the most common source of bugs in multi-file changes
-8. **NEVER leave a task with failing lint or type checks** — fix all errors before marking complete
+1. **NEVER modify code without backup** — Always copy original to .backup/ before any change to enable rollback and traceability
+2. **NEVER add emojis or icons** — Use plain text tags instead. Prohibited: ⭐ ✅ ⚠️ ✔️ 📌 🔧 💡 🔥 💥 ⏰ 🎯 🛡️ 🔊 🔇 💤 🎵 📖 ⚡ 🌡️ 💧 🫖 and all other emoji/special symbols
+3. **NEVER add comments that restate the code** — if the code needs a comment to explain *what* it does, rename things until it doesn't
+4. **NEVER create abstractions for fewer than 3 use cases** — premature abstraction is worse than duplication
+5. **NEVER leave commented-out code in the codebase** — delete it; version control exists for history
+6. **NEVER write functions longer than 20 lines** — extract sub-functions until each does one thing
+7. **NEVER nest deeper than 2 levels** — use guard clauses, early returns, or extract functions
+8. **NEVER use magic numbers or strings** — define named constants with clear semantics
+9. **NEVER edit a file without checking what depends on it** — broken imports and missing updates are the most common source of bugs in multi-file changes
+10. **NEVER leave a task with failing lint or type checks** — fix all errors before marking complete
 
 ---
 
