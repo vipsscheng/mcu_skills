@@ -21,7 +21,7 @@
 - **中资源型**（GD32F103）：支持简单状态机
 - **高资源型**（GD32F407）：支持分层架构和实时操作系统
 
-#### 代码生成约束与规范 (主要是针对国产模型，强化Gmini与Claude)
+#### 代码生成约束与规范 (主要是针对国产模型，强化Gemini与Claude)
 - 代码生成的各种规范
 - 阻止非架构要求
 - C99标准合规
@@ -164,7 +164,7 @@ Regardless of which skill is invoked, the final solution must conform to the tar
 - **Medium Resource** (GD32F103): Supports simple state machines
 - **High Resource** (GD32F407): Supports layered architecture and real-time operating system
 
-#### Code Generation Constraints and Standards (Mainly for Domestic Models, Enhanced for Gmini and Claude)
+#### Code Generation Constraints and Standards (Mainly for Domestic Models, Enhanced for Gemini and Claude)
 - Various code generation standards
 - Block non-architecture requirements
 - C99 standard compliance
