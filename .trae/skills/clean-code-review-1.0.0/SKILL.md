@@ -207,6 +207,56 @@ function getUser(id: string): GetUserResult {
 
 ---
 
+## Code Alignment
+
+When writing multi-line code with comments or aligned content, align based on the longest line to maintain readability.
+
+### Macro/Define Alignment
+
+For C/C++ macros with comments:
+
+```c
+// BAD - not aligned
+/* 语音ID定义 */
+#define Voice_Stop       0  //终止播报
+#define Voice_Loud      2  //音量+
+#define Voice_Low        3  //音量-
+#define Voice_Welcome    4  //欢迎使用
+#define Voice_PowerOff   5  //关机
+#define Voice_LackWater  6  //已缺水
+
+// GOOD - aligned
+/* 语音ID定义 */
+#define Voice_Stop       0  //终止播报
+#define Voice_Loud       2  //音量+
+#define Voice_Low        3  //音量-
+#define Voice_Welcome    4  //欢迎使用
+#define Voice_PowerOff   5  //关机
+#define Voice_LackWater  6  //已缺水
+```
+
+### General Rule
+
+1. Find the longest line in the block
+2. Align all other lines to match that length
+3. Use spaces (not tabs) for alignment
+4. Keep comments on the same column when they describe similar items
+
+### When to Align
+
+- Macro definitions with comments
+- Enum values with descriptions
+- Struct member initializers
+- Table-like data definitions
+
+### When NOT to Align
+
+- Function parameters (use normal indentation)
+- Nested code blocks
+- One-off definitions (only align if part of a group)
+
+---
+
 ## Pre-Edit Safety Check
 
 Before changing any file, answer these questions to avoid cascading breakage:
